@@ -2,6 +2,7 @@ from datetime import datetime
 from config import Config
 from utils import Utils
 
+import git_ops
 import requests
 
 class AedLoader:
@@ -9,6 +10,9 @@ class AedLoader:
         self.exchange_info_url = 'https://littleee.com/api/{exchange}Info'
 
     def write(self):
+        git_ops.pull(Config.aed_dir())
+        git_ops.pull(Config.root()['target_dir'])
+
         now = datetime.utcnow().strftime('%Y-%m-%d')
         data = Utils.read_json(Config.aed_dir(), now)
         self.write_balance('trendfund', 't4', data)
@@ -18,6 +22,8 @@ class AedLoader:
 
         self.write_exchanges_info('trendfund', 't4', ['ftx', 'binance', 'deribit', 'kraken'])
         self.write_exchanges_info('jiuyao', '91_2106', ['jiuyao'])
+
+        git_ops.push(Config.root()['target_dir'])
 
     def write_exchanges_info(self, manager, code, exchanges):
         for exchange in exchanges:
