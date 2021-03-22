@@ -25,9 +25,8 @@ class AedLoader:
             Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", exchange, resp)
 
     def write_balance(self, manager, code, data):
-        columns = ['datetime', 'balance']
         balances = [[int(x[0][0] / 1000), int(x[0][1])] for x in data]
-        Utils.write_file(f"{Config.root()['target_dir']}/data/{manager}/{code}", 'balances', balances, columns)
+        Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", 'balances', balances)
 
     def exchange_info_format(self, data):
         return {
