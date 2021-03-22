@@ -10,8 +10,5 @@ class Config:
         return config['root']
 
     @staticmethod
-    def proxy():
-        if Config.root()['proxy']:
-            return Config.root()['proxies']
-        else:
-            return {}
+    def aed_dir():
+        return Config.root()['aed_dir']
