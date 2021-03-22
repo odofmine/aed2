@@ -28,7 +28,7 @@ class AedLoader:
     def write_exchanges_info(self, manager, code, exchanges):
         for exchange in exchanges:
             resp = requests.get(self.exchange_info_url.format(exchange=exchange)).json()
-            Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", exchange, resp)
+            Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges", exchange, resp)
 
     def write_balance(self, manager, code, data):
         balances = [[int(x[0][0] / 1000), int(x[0][1])] for x in data]
