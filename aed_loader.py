@@ -24,10 +24,10 @@ class AedLoader:
         self.write_exchanges_info('jiuyao', '91_2106', ['jiuyao'])
 
         data = Utils.read_json(Config.aed_dir(), now)
-        self.write_exchange_daily_balance('trendfund', 't4', data)
+        self.write_exchange_daily_balance('trendfund', 't4', data, ['ftx', 'binance', 'deribit', 'kraken'])
 
         data = Utils.read_json(f'{Config.aed_dir()}/jiuyao', now)
-        self.write_exchange_daily_balance('jiuyao', '91_2106', data)
+        self.write_exchange_daily_balance('jiuyao', '91_2106', data, ['jiuyao'])
 
         git_ops.push(Config.root()['target_dir'])
 
@@ -41,12 +41,12 @@ class AedLoader:
         balances = [[int(x[0][0] / 1000), int(x[0][1])] for x in data]
         Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", 'balances', balances)
 
-    def write_exchange_daily_balance(self, manager, code, data):
+    def write_exchange_daily_balance(self, manager, code, data, exchanges):
         folder = f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges/"
-        exchanges = ['ftx', 'binance', 'deribit', 'kraken']
         for index in range(len(exchanges)):
             exchange = exchanges[index]
             ei = index + 1
+            breakpoint()
             Utils.write_to_json(folder, f'{exchange}_daily', data[0][ei])
 
     def exchange_info_format(self, data):
