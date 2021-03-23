@@ -35,6 +35,7 @@ class AedLoader:
         folder = f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges"
         for exchange in exchanges:
             resp = requests.get(self.exchange_info_url.format(exchange=exchange)).json()
+            resp['data'] = self.exchange_info_format(resp['result'])
             Utils.write_to_json(folder, exchange, resp)
 
     def write_balance(self, manager, code, data):
