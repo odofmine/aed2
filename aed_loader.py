@@ -47,6 +47,7 @@ class AedLoader:
             exchange = exchanges[index]
             item = self.exchange_info_format(data[-1][index + 1])
             item['timestamp'] = data[-1][0][0]
+            item['index_price'] = data[-1][1][-1]
             Utils.write_to_json(folder, f'{exchange}_daily', item)
 
     def exchange_info_format(self, data):
