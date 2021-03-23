@@ -1,19 +1,22 @@
-[
-  1616457600,
-  0.8514059649030793,
-  0,
-  128975.86407267,
-  null,
-  null,
-  0,
-  128975.86407267,
-  "BTC-PERP",
-  null,
-  2.03,
-  109810.82,
-  46698.24289725408,
-  79284.9673,
-  -4,
-  5,
-  54094
-]
+{
+  "current_leverage": 0.8514059649030793,
+  "balance": {
+    "btc": 0,
+    "usd": 128975.86407267
+  },
+  "account_unrealized_pnl": 0.0,
+  "margin_balance": 0.0,
+  "avaliable_balance": 0,
+  "market_value": 128975.86407267,
+  "symbol": "BTC-PERP",
+  "exchange_max_leverge": 0.0,
+  "contract_value": 109810.82,
+  "position": {
+    "qty": 2.03,
+    "avg_price": 46698.24289725408,
+    "unrealized_pnl": 79284.9673,
+    "max_long_qty": 5,
+    "max_short_qty": -4
+  },
+  "timestamp": 1616457600000
+}

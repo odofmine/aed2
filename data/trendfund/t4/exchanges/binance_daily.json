@@ -1,18 +1,22 @@
-[
-  1616457600,
-  -0.15343591169584436,
-  1.30091801,
-  0,
-  0.01164671,
-  1.31256472,
-  null,
-  71039.43190044742,
-  "BTCUSD_PERP",
-  "2",
-  -10900,
-  null,
-  "57421.99999999",
-  "0.01162400",
-  -177599,
-  106559
-]
+{
+  "current_leverage": -0.15343591169584436,
+  "balance": {
+    "btc": 1.30091801,
+    "usd": 0
+  },
+  "account_unrealized_pnl": 0.01164671,
+  "margin_balance": 1.31256472,
+  "avaliable_balance": 0.0,
+  "market_value": 71039.43190044742,
+  "symbol": "BTCUSD_PERP",
+  "exchange_max_leverge": "2",
+  "contract_value": 0.0,
+  "position": {
+    "qty": -10900,
+    "avg_price": "57421.99999999",
+    "unrealized_pnl": "0.01162400",
+    "max_long_qty": 106559,
+    "max_short_qty": -177599
+  },
+  "timestamp": 1616457600000
+}
