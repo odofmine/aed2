@@ -45,9 +45,8 @@ class AedLoader:
         folder = f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges/"
         for index in range(len(exchanges)):
             exchange = exchanges[index]
-            timestamp = data[-1][0][0]
-            item = data[-1][index + 1]
-            item.insert(0, int(timestamp / 1000))
+            item = self.exchange_info_format(data[-1][index + 1])
+            item['timestamp'] = data[-1][0][0]
             Utils.write_to_json(folder, f'{exchange}_daily', item)
 
     def exchange_info_format(self, data):
