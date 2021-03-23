@@ -46,6 +46,7 @@ class AedLoader:
 
     def write_balance(self, manager, code, data):
         balances = [[int(x[0][0] / 1000), int(x[0][1])] for x in data]
+        balances.sort(key=lambda x : x[0], reverse=True)
         Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", 'balances', balances)
 
     def write_exchange_daily_balance(self, manager, code, data, exchanges):
