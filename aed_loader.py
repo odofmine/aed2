@@ -23,16 +23,28 @@ class AedLoader:
         self.write_exchanges_info('trendfund', 't4', ['ftx', 'binance', 'deribit', 'kraken'])
         self.write_exchanges_info('jiuyao', '91_2106', ['jiuyao'])
 
+        self.write_exchange_daily_balance('trendfund', 't4')
+        self.write_exchange_daily_balance('jiuyao', '91_2106')
+
         git_ops.push(Config.root()['target_dir'])
 
     def write_exchanges_info(self, manager, code, exchanges):
+        folder = f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges"
         for exchange in exchanges:
             resp = requests.get(self.exchange_info_url.format(exchange=exchange)).json()
-            Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges", exchange, resp)
+            Utils.write_to_json(folder, exchange, resp)
 
     def write_balance(self, manager, code, data):
         balances = [[int(x[0][0] / 1000), int(x[0][1])] for x in data]
         Utils.write_to_json(f"{Config.root()['target_dir']}/data/{manager}/{code}", 'balances', balances)
+
+    def write_exchange_daily_balance(self, manager, code, data):
+        folder = f"{Config.root()['target_dir']}/data/{manager}/{code}/exchanges/"
+        exchanges = ['ftx', 'binance', 'deribit', 'kraken']
+        for index in range(len(exchanges)):
+            exchange = exchanges[index]
+            ei = index + 1
+            Utils.write_to_json(folder, f'{exchange}_daily', data[0][ei])
 
     def exchange_info_format(self, data):
         return {
@@ -52,8 +64,8 @@ class AedLoader:
                 'qty': self.format(data[9]),
                 'avg_price': self.format(data[11]),
                 'unrealized_pnl': self.format(data[12]),
-                'max_long_qty': self.format(data[13]),
-                'max_short_qty': self.format(data[14]),
+                'max_long_qty': self.format(data[14]),
+                'max_short_qty': self.format(data[13]),
             }
         }
 
