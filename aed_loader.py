@@ -23,8 +23,11 @@ class AedLoader:
         self.write_exchanges_info('trendfund', 't4', ['ftx', 'binance', 'deribit', 'kraken'])
         self.write_exchanges_info('jiuyao', '91_2106', ['jiuyao'])
 
-        self.write_exchange_daily_balance('trendfund', 't4')
-        self.write_exchange_daily_balance('jiuyao', '91_2106')
+        data = Utils.read_json(Config.aed_dir(), now)
+        self.write_exchange_daily_balance('trendfund', 't4', data)
+
+        data = Utils.read_json(f'{Config.aed_dir()}/jiuyao', now)
+        self.write_exchange_daily_balance('jiuyao', '91_2106', data)
 
         git_ops.push(Config.root()['target_dir'])
 
