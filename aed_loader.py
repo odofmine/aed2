@@ -58,6 +58,7 @@ class AedLoader:
             Utils.write_to_json(folder, f'{exchange}_daily', item)
 
     def exchange_info_format(self, data):
+        exchange_max_leverge = data[8] if data[8] else 'unlimited'
         return {
             'current_leverage': self.format(data[0]),
             'balance': {
@@ -69,7 +70,7 @@ class AedLoader:
             'avaliable_balance': self.format(data[5]),
             'market_value': self.format(data[6]),
             'symbol': self.format(data[7]),
-            'exchange_max_leverge': self.format(data[8]),
+            'exchange_max_leverge': exchange_max_leverge,
             'contract_value': self.format(data[10]),
             'position': {
                 'qty': self.format(data[9]),
