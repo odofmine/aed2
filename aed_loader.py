@@ -68,11 +68,9 @@ class AedLoader:
             },
             'account_unrealized_pnl': self.format(data[3]),
             'margin_balance': self.format(data[4]),
-            'avaliable_balance': self.format(data[5]),
             'market_value': self.format(data[6]),
             'symbol': self.format(data[7]),
             'exchange_max_leverge': exchange_max_leverge,
-            'contract_value': self.format(data[10]),
             'position': {
                 'qty': self.format(data[9]),
                 'avg_price': self.format(data[11]),
