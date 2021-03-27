@@ -1,23 +1,23 @@
 {
   "code": 200,
-  "time": 1616858529696,
+  "time": 1616858589074,
   "data": {
-    "current_leverage": -0.3862758607524997,
+    "current_leverage": -0.3863876624298241,
     "balance": {
       "btc": 1.16075304225,
       "usd": 0
     },
-    "account_unrealized_pnl": -0.00015883294057296326,
-    "margin_balance": 1.160671893866921,
-    "market_value": 63848.15233329436,
+    "account_unrealized_pnl": 0.00017126390932988255,
+    "margin_balance": 1.1610023696667597,
+    "market_value": 63829.67780312941,
     "symbol": "pi_xbtusd",
     "exchange_max_leverge": "unlimited",
     "position": {
       "qty": -24663,
       "avg_price": 55009.25514157815,
-      "unrealized_pnl": -0.00015883294057296326,
-      "max_long_qty": 95772,
-      "max_short_qty": -159621
+      "unrealized_pnl": 0.00017126390932988255,
+      "max_long_qty": 95744,
+      "max_short_qty": -159575
     }
   }
 }
