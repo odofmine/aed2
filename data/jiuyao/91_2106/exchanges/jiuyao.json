@@ -1,23 +1,23 @@
 {
   "code": 200,
-  "time": 1618440911422,
+  "time": 1618440970609,
   "data": {
-    "current_leverage": -0.010123339830189364,
+    "current_leverage": -0.010130670444116896,
     "balance": {
       "btc": 1.63288391,
       "usd": 0
     },
-    "account_unrealized_pnl": -0.00166026,
-    "margin_balance": 1.6312236500000001,
-    "market_value": 102634.11259805202,
+    "account_unrealized_pnl": -0.0016475,
+    "margin_balance": 1.63123641,
+    "market_value": 102559.8459382686,
     "symbol": "BTC-SWAP",
     "exchange_max_leverge": 0.01,
     "position": {
       "qty": -1039,
       "avg_price": 57183.2,
-      "unrealized_pnl": -0.00166026,
-      "max_long_qty": 153951,
-      "max_short_qty": -256586
+      "unrealized_pnl": -0.0016475,
+      "max_long_qty": 153839,
+      "max_short_qty": -256400
     }
   }
 }
