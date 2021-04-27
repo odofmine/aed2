@@ -1,23 +1,23 @@
 {
   "code": 200,
-  "time": 1619503570485,
+  "time": 1619503629986,
   "data": {
-    "current_leverage": -0.5283289654383471,
+    "current_leverage": -0.5283476401414428,
     "balance": {
-      "btc": 1.7862475,
+      "btc": 1.78654222,
       "usd": 0
     },
-    "account_unrealized_pnl": -0.00013782,
-    "margin_balance": 1.7862475,
-    "market_value": 96720.042516698,
+    "account_unrealized_pnl": 0.0001569,
+    "margin_balance": 1.78654222,
+    "market_value": 96716.62389997642,
     "symbol": "BTC-PERPETUAL",
     "exchange_max_leverge": "unlimited",
     "position": {
       "qty": -51100,
       "avg_price": 54147.9,
-      "unrealized_pnl": -0.000137823,
-      "max_long_qty": 145080,
-      "max_short_qty": -241801
+      "unrealized_pnl": 0.000156897,
+      "max_long_qty": 145074,
+      "max_short_qty": -241792
     }
   }
 }
