@@ -1,23 +1,23 @@
 {
   "code": 200,
-  "time": 1620163328098,
+  "time": 1620163388317,
   "data": {
-    "current_leverage": -0.1810065507643285,
+    "current_leverage": -0.18107116284338293,
     "balance": {
       "btc": 1.06166581,
       "usd": 0
     },
-    "account_unrealized_pnl": 4.743e-05,
-    "margin_balance": 1.06171324,
-    "market_value": 58008.95025987792,
+    "account_unrealized_pnl": 0.0001028,
+    "margin_balance": 1.06176861,
+    "market_value": 57988.250780064576,
     "symbol": "BTCUSD_PERP",
     "exchange_max_leverge": "2",
     "position": {
       "qty": -10500,
       "avg_price": "54656.39300052",
-      "unrealized_pnl": "0.00004743",
-      "max_long_qty": 87013,
-      "max_short_qty": -145023
+      "unrealized_pnl": "0.00010280",
+      "max_long_qty": 86982,
+      "max_short_qty": -144971
     }
   }
 }
